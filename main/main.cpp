@@ -37,13 +37,13 @@ void esp_nn_add_elementwise_s8_test() {
 //  int8_t *input2_orig = NULL;
 //  int8_t *out_c_orig = NULL;
 //  int8_t *out_opt_orig = NULL;
-  int32_t input1_offset = 34;
-  int32_t input2_offset = 35;
-  int32_t output_offset = 36;
-  int32_t input1_shift = -8; // right_shift amt always <= 0
-  int32_t input2_shift = -8; // right_shift amt always <= 0
-  int32_t output_shift = -9; // right_shift amt always <= 0
-  int32_t left_shift = 15; // always +ve
+  int32_t input1_offset = 0;
+  int32_t input2_offset = 0;
+  int32_t output_offset = 0;
+  int32_t input1_shift = 0; // right_shift amt always <= 0
+  int32_t input2_shift = 0; // right_shift amt always <= 0
+  int32_t output_shift = 0; // right_shift amt always <= 0
+  int32_t left_shift = 0; // always +ve
   int32_t input1_mult = INT32_MAX;
   int32_t input2_mult = INT32_MAX;
   int32_t output_mult = INT32_MAX;
@@ -51,16 +51,6 @@ void esp_nn_add_elementwise_s8_test() {
   int32_t activation_min = -128;
   int32_t activation_max = 127;
 
-  input1_offset = 0;
-  input2_offset = 0;
-  output_offset = 0;
-//  input1_mult = 0;
-//  input2_mult = 0;
-//  output_mult = 0;
-  input1_shift = 0;
-  input2_shift = 0;
-  output_shift = 0;
-  left_shift = 0;
 
 //  input1 = memalign(16, size);
 //  input2 = memalign(16, size);

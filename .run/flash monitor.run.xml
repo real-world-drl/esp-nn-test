@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="flash monitor" type="CompoundRunConfigurationType">
+    <toRun name="flash" type="CMakeRunConfiguration" />
+    <toRun name="monitor" type="CMakeRunConfiguration" />
+    <method v="2" />
+  </configuration>
+</component>
