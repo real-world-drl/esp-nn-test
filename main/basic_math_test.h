@@ -9,15 +9,12 @@
 
 void esp_nn_add_elementwise_s8_test() {
   /* prepare data */
-  const int size = 4; /* odd len to test leftover */
+  const int size = 4;
   const int8_t input1[4]{1, 2, 3, 4};
   const int8_t input2[4]{1, 3, 6, 8};
   int8_t out_data_c[4]{};
   int8_t out_data_opt[4]{};
-//  int8_t *input1_orig = NULL;
-//  int8_t *input2_orig = NULL;
-//  int8_t *out_c_orig = NULL;
-//  int8_t *out_opt_orig = NULL;
+
   int32_t input1_offset = 0;
   int32_t input2_offset = 0;
   int32_t output_offset = 0;
@@ -32,16 +29,6 @@ void esp_nn_add_elementwise_s8_test() {
   int32_t activation_min = -128;
   int32_t activation_max = 127;
 
-
-//  input1 = memalign(16, size);
-//  input2 = memalign(16, size);
-//  out_data_c = memalign(16, size);
-//  out_data_opt = memalign(16, size);
-
-//  for (int i = 0; i < size; ++i) {
-//    input1[i] = int8_t(rand() % 256 - 128);
-//    input2[i] = int8_t(rand() % 256 - 128);
-//  }
 
   /* C function */
   esp_nn_add_elementwise_s8_ansi(input1, input2, input1_offset, input2_offset,

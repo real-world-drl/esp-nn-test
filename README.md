@@ -1,32 +1,10 @@
-# _Sample project_
+# esp-nn Test
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+`esp-nn` is a library that implements the math for `tflitemicro` for ESP32.
+It implements basic math functions (elementwise add/multiply) as well as the NN layers (fully connected, convolution, pooling and softmax) and ReLU activation function.
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+This means that it is possible to build a neural network using the above building blocks without a need for `tflitemicro`.
 
+The downside is that it is purpose-built for `tflitemicro` so the API is a little convoluted and there's no documentation.
 
-
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
-
-## Example folder contents
-
-The project **sample_project** contains one source file in C language [main.c](main/main.cpp). The file is located in folder [main](main).
-
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
-
-Below is short explanation of remaining files in the project folder.
-
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+This project is based on the esp-nn tests - just simplified. Because my research is in Deep Reinforcement Learning, (at the moment) I only need `fully connected` and `ReLU` to implement TD3, SAC, etc.
